@@ -8,7 +8,8 @@ const routes = [
   {
     path: '/',
     name: 'HomeScreen',
-    component: HomeScreen
+    component: HomeScreen,
+    meta: { title: "Trang chủ" },
   },
 ]
 
