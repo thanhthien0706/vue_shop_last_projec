@@ -1,29 +1,23 @@
 <template>
   <div id="app">
-
     <!-- header trang -->
-    <the-header/>
+    <the-header />
     <router-view />
+    <the-footer />
   </div>
 </template>
 
 <script>
-import TheHeader from './components/common/TheHeader.vue';
+import TheFooter from "./components/common/TheFooter.vue";
+import TheHeader from "./components/common/TheHeader.vue";
 export default {
-  components: { TheHeader },
+  components: { TheHeader, TheFooter },
   name: "App",
-  mounted(){
-    console.log(this.$router)
-  }
+  mounted() {
+    console.log(this.$router);
+  },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 </style>
