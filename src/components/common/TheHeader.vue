@@ -210,14 +210,12 @@
                 <div class="" id="primary-navigation">
                   <ul class="nav navbar-nav primary-navbar">
                     <li class="dropdown active">
-                      <a
-                        href="#"
+                      <router-link :to="{name:'HomeScreen'}"
                         class="dropdown-toggle"
                         data-toggle="dropdown"
                         role="button"
                         aria-haspopup="true"
-                        >Home</a
-                      >
+                        >Home</router-link>
                       <ul class="dropdown-menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index-2.html">Home 2</a></li>
