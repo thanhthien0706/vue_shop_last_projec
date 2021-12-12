@@ -168,10 +168,13 @@
             </div>
           </li>
           <li class="menu-item">
-            <a href="checkout.html">Checkout</a>
+            <a href="#">Checkout</a>
           </li>
           <li class="menu-item">
-            <a href="#login-popup" data-toggle="modal">Login</a>
+            <a href="#" @click.prevent="toggleOpenRegister">Register</a>
+          </li>
+          <li class="menu-item">
+            <a href="#login-popup" data-toggle="modal" @click.prevent="toggleOpenLogin">Login</a>
           </li>
         </ul>
       </div>
@@ -501,6 +504,15 @@
 <script>
 export default {
   name: "TheHeader",
+  methods:{
+    toggleOpenLogin(event){
+      let idFormLogin = event.target.getAttribute('href');
+      this.$emit('IdFormLogin', idFormLogin.split('#')[1]);
+    },
+    toggleOpenRegister(){
+      this.$emit('openRegister');
+    }
+  }
 };
 </script>
 // src="../../assets/styles/components/common/header.css"

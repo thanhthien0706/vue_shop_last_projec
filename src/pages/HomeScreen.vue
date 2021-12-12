@@ -84,15 +84,11 @@
           <list-product />
 
           <div
-            class="
-              swiper-button-customer swiper-button-prev swiper-button-black
-            "
+            class="swiper-button-customer swiper-button-prev swiper-button-black"
             slot="button-prev"
           ></div>
           <div
-            class="
-              swiper-button-customer swiper-button-next swiper-button-black
-            "
+            class="swiper-button-customer swiper-button-next swiper-button-black"
             slot="button-next"
           ></div>
         </swiper>
@@ -129,11 +125,7 @@
       </div>
 
       <div
-        class="
-          gst-column
-          col-lg-6 col-md-6 col-sm-12 col-xs-12
-          gst-compare-women
-        "
+        class="gst-column col-lg-6 col-md-6 col-sm-12 col-xs-12 gst-compare-women"
       >
         <div class="col-lg-7">
           <h5 class="title-1">Waterproof Jacket</h5>

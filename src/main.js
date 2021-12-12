@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import axios from "axios";
+
 // import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 // import 'bootstrap/dist/css/bootstrap.css'
@@ -34,20 +36,6 @@ import './assets/css/header.css'
 
 Vue.config.productionTip = false
 
-// Vue.loadScript("./assets/plugins/jquery/jquery-2.1.3.js")
-// Vue.loadScript("./assets/plugins/royalslider/jquery.royalslider.min.js")
-// Vue.loadScript("./assets/plugins/bootstrap/js/bootstrap.min.js")
-// Vue.loadScript("./assets/plugins/bootstrap-select-1.9.3/dist/js/bootstrap-select.min.js")
-// Vue.loadScript("./assets/plugins/owl-carousel2/owl.carousel.min.js")
-// Vue.loadScript("./assets/plugins/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js")
-
-// Vue.loadScript("./assets/plugins/isotope-master/dist/isotope.pkgd.min.js")
-// Vue.loadScript("./assets/plugins/subscribe-better-master/jquery.subscribe-better.min.js")
-
-// Vue.loadScript("./assets/js/countdown.js")
-// Vue.loadScript("./assets/js/jquery.sticky.js")
-// Vue.loadScript("./assets/js/custom.js")
-
 // import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
 
@@ -62,6 +50,23 @@ router.afterEach((to) => {
 // Vue.use(IconsPlugin)
 Vue.use(LoadScript);
 Vue.use(VueAwesomeSwiper)
+
+
+// Vue.loadScript("./assets/plugins/jquery/jquery-2.1.3.js")
+// Vue.loadScript("./assets/plugins/royalslider/jquery.royalslider.min.js")
+// Vue.loadScript("./assets/plugins/bootstrap/js/bootstrap.min.js")
+// Vue.loadScript("./assets/plugins/bootstrap-select-1.9.3/dist/js/bootstrap-select.min.js")
+// Vue.loadScript("./assets/plugins/owl-carousel2/owl.carousel.min.js")
+// Vue.loadScript("./assets/plugins/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js")
+
+// Vue.loadScript("./assets/plugins/isotope-master/dist/isotope.pkgd.min.js")
+// Vue.loadScript("./assets/plugins/subscribe-better-master/jquery.subscribe-better.min.js")
+
+// Vue.loadScript("./assets/js/countdown.js")
+// Vue.loadScript("./assets/js/jquery.sticky.js")
+// Vue.loadScript("./assets/js/custom.js")
+
+axios.defaults.baseUrl = "http://localhost"
 
 new Vue({
     router,
