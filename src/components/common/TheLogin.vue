@@ -42,15 +42,16 @@
 
             <p class="bold-font-2 fsz-12 signup">OR SIGN UP</p>
 
-            <form class="login">
+            <form class="login" @submit.prevent="onLogin">
               <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control" />
+                <input type="text" placeholder="Email"  v-model="userForm.email" class="form-control" />
               </div>
               <div class="form-group">
                 <input
                   type="text"
                   placeholder="Password"
                   class="form-control"
+                  v-model="userForm.password"
                 />
               </div>
               <div class="form-group">
@@ -71,6 +72,8 @@
 </template>
 
 <script>
+import AuthService from '@/services/auth-service.js'
+
 export default {
   name: "TheLogin",
   props: {
@@ -78,11 +81,23 @@ export default {
       type: Boolean,
     },
   },
+  data() {
+    return {
+      userForm: {
+        email: "",
+        password: "",
+      }
+    }
+  },
   methods: {
     //   tắt form đăng nhập
       closeFormLogin(){
           this.$emit('closeFormLogin');
-      }
+      },
+      async onLogin(){
+        const dataLogin = await AuthService.login(this.userForm);
+        console.log(dataLogin)
+    }
   }
 };
 </script>

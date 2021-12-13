@@ -39,21 +39,21 @@
 
             <p class="bold-font-2 fsz-18 signup">Register</p>
 
-            <form class="login">
+            <form class="login" @submit.prevent="onRegister" >
               <div class="form-group">
-                <input type="text" placeholder="First name" class="form-control" />
+                <input type="text" placeholder="Last name" v-model="userForm.lastname" class="form-control" />
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Last name" class="form-control" />
+                <input type="text" placeholder="First name" v-model="userForm.firstname" class="form-control" />
               </div>
               <div class="form-group">
-                <input type="email" placeholder="Email" class="form-control" />
+                <input type="email" placeholder="Email" v-model="userForm.email" class="form-control" />
               </div>
               <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control" />
+                <input type="password" placeholder="Password" v-model="userForm.password" class="form-control" />
               </div>
               <div class="form-group">
-                <input type="password" placeholder="Password confirm" class="form-control" />
+                <input type="password" placeholder="Password confirm" v-model="userForm.password_confirmation" class="form-control" />
               </div>
               <div class="form-group">
                 <button class="alt fancy-button" type="submit">
@@ -73,6 +73,9 @@
 </template>
 
 <script>
+
+import AuthService from '@/services/auth-service.js'
+
 export default {
   name: "TheRegister",
   props: {
@@ -80,9 +83,25 @@ export default {
       type: Boolean,
     },
   },
+  data() {
+    return {
+      userForm: {
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+      }
+    }
+  },
   methods: {
     closeFormRegister(){
       this.$emit('closeFormRegister');
+    },
+    async onRegister(){
+      const dataregister = await AuthService.register(this.userForm);
+      console.log(dataregister)
+      this.$emit('afterRegister')
     }
   },
 };

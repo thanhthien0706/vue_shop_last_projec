@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import axios from "axios";
+import AuthService from '@/services/auth-service.js'
 
 // import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
@@ -51,22 +52,10 @@ router.afterEach((to) => {
 Vue.use(LoadScript);
 Vue.use(VueAwesomeSwiper)
 
+axios.defaults.baseURL = "https://vue-shop.tk/api"
+axios.defaults.headers.common['project-name'] = 'go-shop'
 
-// Vue.loadScript("./assets/plugins/jquery/jquery-2.1.3.js")
-// Vue.loadScript("./assets/plugins/royalslider/jquery.royalslider.min.js")
-// Vue.loadScript("./assets/plugins/bootstrap/js/bootstrap.min.js")
-// Vue.loadScript("./assets/plugins/bootstrap-select-1.9.3/dist/js/bootstrap-select.min.js")
-// Vue.loadScript("./assets/plugins/owl-carousel2/owl.carousel.min.js")
-// Vue.loadScript("./assets/plugins/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js")
-
-// Vue.loadScript("./assets/plugins/isotope-master/dist/isotope.pkgd.min.js")
-// Vue.loadScript("./assets/plugins/subscribe-better-master/jquery.subscribe-better.min.js")
-
-// Vue.loadScript("./assets/js/countdown.js")
-// Vue.loadScript("./assets/js/jquery.sticky.js")
-// Vue.loadScript("./assets/js/custom.js")
-
-axios.defaults.baseUrl = "http://localhost"
+AuthService.initAuthHeader();
 
 new Vue({
     router,

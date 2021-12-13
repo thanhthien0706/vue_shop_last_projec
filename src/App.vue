@@ -11,7 +11,7 @@
     <the-login :isShowLogin="isShowLogin" @closeFormLogin="closeFormLogin" />
 
     <!-- Đăng kí -->
-    <the-register :isShowRegister="isShowRegister" @closeFormRegister="closeFormRegister" />
+    <the-register :isShowRegister="isShowRegister" @closeFormRegister="closeFormRegister" @afterRegister="afterRegister"/>
 
     <div
       :class="[{ 'modal-backdrop fade in': isShowLogin } , { 'modal-backdrop fade in': isShowRegister }]"
@@ -40,8 +40,7 @@ export default {
   methods: {
 
     // login
-    showLogin(event) {
-      console.log(event);
+    showLogin() {
       this.isShowLogin = true;
     },
     closeFormLogin(){
@@ -54,6 +53,10 @@ export default {
     },
     closeFormRegister(){
       this.isShowRegister = false;
+    },
+    afterRegister(){
+      this.isShowRegister = false;
+      this.isShowLogin = true;
     }
   },
 };
