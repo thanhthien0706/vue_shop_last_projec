@@ -8,7 +8,7 @@
     <the-footer />
 
     <!-- login -->
-    <the-login :isShowLogin="isShowLogin" @closeFormLogin="closeFormLogin" />
+    <the-login :isShowLogin="isShowLogin" @closeFormLogin="closeFormLogin" @changeInforLogin="changeInforLogin" />
 
     <!-- Đăng kí -->
     <the-register :isShowRegister="isShowRegister" @closeFormRegister="closeFormRegister" @afterRegister="afterRegister"/>
@@ -21,10 +21,13 @@
 </template>
 
 <script>
+import AuthService from '@/services/auth-service.js'
+
 import TheFooter from "./components/common/TheFooter.vue";
 import TheHeader from "./components/common/TheHeader.vue";
 import TheLogin from "./components/common/TheLogin.vue";
 import TheRegister from './components/common/TheRegister.vue';
+
 export default {
   components: { TheHeader, TheFooter, TheLogin, TheRegister },
   name: "App",
@@ -45,6 +48,12 @@ export default {
     },
     closeFormLogin(){
       this.isShowLogin = false;
+    },
+    async changeInforLogin()
+    {
+      const test = await AuthService.me();
+      console.log(test);
+      console.log("vào rồi này bạn");
     },
 
     // register

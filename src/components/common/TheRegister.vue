@@ -100,8 +100,11 @@ export default {
     },
     async onRegister(){
       const dataregister = await AuthService.register(this.userForm);
-      console.log(dataregister)
-      this.$emit('afterRegister')
+      // console.log(dataregister)
+      if(dataregister.code == 200)
+      {
+        this.$emit('afterRegister')
+      }
     }
   },
 };

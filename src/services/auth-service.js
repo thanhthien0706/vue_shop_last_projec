@@ -41,8 +41,8 @@ export default {
             // console.log('đăng nhập thành công');
             localStorage.setItem('goShopToken', res.data.data.token.access_token)
             this.initAuthHeader();
-            this.me()
-                // axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.data.token.access_token}`;
+            // this.me()
+            // axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.data.token.access_token}`;
             return res.data;
         }
     },
@@ -51,7 +51,6 @@ export default {
     async me() {
         try {
             const res = await axios.post('me')
-            console.log(res);
             if (res.data.code === 200) {
                 console.log("Data token");
             } else {
@@ -60,6 +59,7 @@ export default {
             return res.data;
         } catch (e) {
             this.resetAuthHeader();
+            console.log("not oke");
         }
 
     },

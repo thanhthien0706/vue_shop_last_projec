@@ -96,7 +96,10 @@ export default {
       },
       async onLogin(){
         const dataLogin = await AuthService.login(this.userForm);
-        console.log(dataLogin)
+        if(dataLogin.code == 200)
+        {
+          this.$emit('changeInforLogin');
+        }
     }
   }
 };
