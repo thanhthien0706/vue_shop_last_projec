@@ -98,7 +98,9 @@ export default {
         const dataLogin = await AuthService.login(this.userForm);
         if(dataLogin.code == 200)
         {
+          // console.log(dataLogin.data)
           this.$emit('changeInforLogin');
+          // this.$store.dispatch('actionSetUser', dataLogin.data.data );
         }
     }
   }

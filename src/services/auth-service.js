@@ -59,7 +59,7 @@ export default {
             return res.data;
         } catch (e) {
             this.resetAuthHeader();
-            console.log("not oke");
+            return false;
         }
 
     },

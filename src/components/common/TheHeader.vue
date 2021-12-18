@@ -170,12 +170,27 @@
           <li class="menu-item">
             <a href="#">Checkout</a>
           </li>
-          <li class="menu-item">
-            <a href="#" @click.prevent="toggleOpenRegister">Register</a>
-          </li>
-          <li class="menu-item">
-            <a href="#login-popup" data-toggle="modal" @click.prevent="toggleOpenLogin">Login</a>
-          </li>
+          <template v-if="UserLogin && UserLogin !== null">
+            <li class="menu-item">
+              <a href="#">{{ UserLogin.lastname + UserLogin.firstname  }}</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" @click.prevent="onLogout">Logout</a>
+            </li>
+          </template>
+          <template v-else>
+            <li class="menu-item">
+              <a href="#" @click.prevent="toggleOpenRegister">Register</a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="#login-popup"
+                data-toggle="modal"
+                @click.prevent="toggleOpenLogin"
+                >Login</a
+              >
+            </li>
+          </template>
         </ul>
       </div>
     </div>
@@ -213,12 +228,14 @@
                 <div class="" id="primary-navigation">
                   <ul class="nav navbar-nav primary-navbar">
                     <li class="dropdown active">
-                      <router-link :to="{name:'HomeScreen'}"
+                      <router-link
+                        :to="{ name: 'HomeScreen' }"
                         class="dropdown-toggle"
                         data-toggle="dropdown"
                         role="button"
                         aria-haspopup="true"
-                        >Home</router-link>
+                        >Home</router-link
+                      >
                       <ul class="dropdown-menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index-2.html">Home 2</a></li>
@@ -502,17 +519,36 @@
 </template>
 
 <script>
+import AuthService from '@/services/auth-service.js'
+
 export default {
   name: "TheHeader",
-  methods:{
-    toggleOpenLogin(event){
-      let idFormLogin = event.target.getAttribute('href');
-      this.$emit('IdFormLogin', idFormLogin.split('#')[1]);
+  data() {
+    return {
+      isLogin: false,
+    };
+  },
+  mounted() {},
+  methods: {
+    toggleOpenLogin(event) {
+      let idFormLogin = event.target.getAttribute("href");
+      this.$emit("IdFormLogin", idFormLogin.split("#")[1]);
     },
-    toggleOpenRegister(){
-      this.$emit('openRegister');
+    toggleOpenRegister() {
+      this.$emit("openRegister");
+    },
+    async onLogout(){
+      let dataLogout = await AuthService.logout();
+      if(dataLogout.code === 200) {
+          this.$store.dispatch('actionSetUser', null );
+      }
     }
-  }
+  },
+  computed: {
+    UserLogin() {
+      return this.$store.state.user;
+    },
+  },
 };
 </script>
 // src="../../assets/styles/components/common/header.css"

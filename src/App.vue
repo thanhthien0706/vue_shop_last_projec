@@ -38,7 +38,7 @@ export default {
     };
   },
   mounted() {
-    // console.log(this.$router);
+    this.changeInforLogin()
   },
   methods: {
 
@@ -51,9 +51,15 @@ export default {
     },
     async changeInforLogin()
     {
-      const test = await AuthService.me();
-      console.log(test);
-      console.log("vào rồi này bạn");
+      this.closeFormLogin();
+      const dataMe = await AuthService.me();
+      if(dataMe != false){
+        if(dataMe.code === 200) {
+          // console.log(dataMe.data.user)
+          this.$store.dispatch('actionSetUser', dataMe.data.user );
+        }
+      }
+
     },
 
     // register
@@ -64,8 +70,8 @@ export default {
       this.isShowRegister = false;
     },
     afterRegister(){
-      this.isShowRegister = false;
-      this.isShowLogin = true;
+      this.closeFormRegister()
+      this.showLogin()
     }
   },
 };
