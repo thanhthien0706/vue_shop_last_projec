@@ -289,121 +289,7 @@
 
     <!-- Special Offers -->
     <section class="container theme-container">
-      <div class="gst-row">
-        <div class="fancy-heading text-center spcbtm-15">
-          <h3>Special Offers</h3>
-          <h5 class="funky-font-2">Special price only this month</h5>
-        </div>
-        <div class="special-offers row">
-          <div class="col-sm-6 col-lg-4">
-            <div class="product">
-              <div class="image">
-                <a href="#"
-                  ><img src="@/assets/img/products/cat-1.png" alt="Product"
-                /></a>
-              </div>
-              <div class="right">
-                <p class="funky-font-2">Mountain bike</p>
-                <div class="name"><a href="#">GT SENSOR COMP 27.5</a></div>
-                <div class="price font-2">
-                  Price: <span class="price-new">$299.00</span>
-                  <span class="price-old">$599.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="product">
-              <div class="image">
-                <a href="#"
-                  ><img src="@/assets/img/products/cat-2.png" alt="Product"
-                /></a>
-              </div>
-              <div class="right">
-                <p class="funky-font-2">Mountain bike</p>
-                <div class="name"><a href="#">BREEZER SQUALL 1.0</a></div>
-                <div class="price font-2">
-                  Price: <span class="price-new">$299.00</span>
-                  <span class="price-old">$599.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="product">
-              <div class="image">
-                <a href="#"
-                  ><img src="@/assets/img/products/cat-3.png" alt="Product"
-                /></a>
-              </div>
-              <div class="right">
-                <p class="funky-font-2">Mountain bike</p>
-                <div class="name"><a href="#">GT SENSOR COMP 27.5</a></div>
-                <div class="price font-2">
-                  Price: <span class="price-new">$299.00</span>
-                  <span class="price-old">$599.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="product">
-              <div class="image">
-                <a href="#"
-                  ><img src="@/assets/img/products/cat-4.png" alt="Product"
-                /></a>
-              </div>
-              <div class="right">
-                <p class="funky-font-2">Mountain bike</p>
-                <div class="name"><a href="#">BREEZER SQUALL 1.0</a></div>
-                <div class="price font-2">
-                  Price: <span class="price-new">$299.00</span>
-                  <span class="price-old">$599.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="product">
-              <div class="image">
-                <a href="#"
-                  ><img src="@/assets/img/products/cat-5.png" alt="Product"
-                /></a>
-              </div>
-              <div class="right">
-                <p class="funky-font-2">Mountain bike</p>
-                <div class="name"><a href="#">GT SENSOR COMP 27.5</a></div>
-                <div class="price font-2">
-                  Price: <span class="price-new">$299.00</span>
-                  <span class="price-old">$599.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="product">
-              <div class="image">
-                <a href="#"
-                  ><img src="@/assets/img/products/cat-6.png" alt="Product"
-                /></a>
-              </div>
-              <div class="right">
-                <p class="funky-font-2">Mountain bike</p>
-                <div class="name"><a href="#">GT SENSOR COMP 27.5</a></div>
-                <div class="price font-2">
-                  Price: <span class="price-new">$299.00</span>
-                  <span class="price-old">$599.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <offers-product-main />
     </section>
     <!-- / Special Offers -->
 
@@ -585,6 +471,7 @@ import TheSlider from "@/components/Home/sliders/TheSlider.vue";
 import FeaturedMain from "../components/Home/featured_products/FeaturedMain.vue";
 import TheComment from "../components/Home/testimonials/TheComment.vue";
 import FilterMain from "@/components/Home/filter_product/FilterMain.vue"
+import OffersProductMain from '../components/Home/offers/OffersProductMain.vue';
 
 export default {
   name: "HomeScreen",
@@ -594,6 +481,7 @@ export default {
     FeaturedMain,
     TheComment,
     FilterMain,
+    OffersProductMain,
   },
   data() {
     return {

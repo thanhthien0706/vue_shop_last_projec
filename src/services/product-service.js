@@ -1,9 +1,12 @@
 import axios from "axios";
 
 const ProductService = {
-    products: () => {
-        const res = axios.get('products')
-        console.log(res);
+    products: async() => {
+        const res = await axios.get('products')
+        if (res.status === 200) {
+            return res.data;
+        }
+        return false;
     }
 }
 
