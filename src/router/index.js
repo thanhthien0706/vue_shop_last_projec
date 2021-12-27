@@ -1,21 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import HomeScreen from '../pages/HomeScreen.vue'
-import TestScreen from '../pages/TestScreen.vue'
+// import HomeScreen from '../pages/HomeScreen.vue'
+// import TestScreen from '../pages/TestScreen.vue'
 
 Vue.use(VueRouter)
 
 const routes = [{
         path: '/',
         name: 'HomeScreen',
-        component: HomeScreen,
+        component: () =>
+            import ("../pages/HomeScreen.vue"),
         meta: { title: "Trang chủ" },
     },
     {
         path: '/test',
         name: 'TestScreen',
-        component: TestScreen,
+        component: () =>
+            import ("../pages/TestScreen.vue"),
         meta: { title: "Trang test" },
     },
 ]
