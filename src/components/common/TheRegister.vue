@@ -73,8 +73,7 @@
 </template>
 
 <script>
-
-import AuthService from '@/services/auth-service.js'
+import FirebaseService from "@/services/firebase-service.js";
 
 export default {
   name: "TheRegister",
@@ -99,12 +98,8 @@ export default {
       this.$emit('closeFormRegister');
     },
     async onRegister(){
-      const dataregister = await AuthService.register(this.userForm);
-      // console.log(dataregister)
-      if(dataregister.code == 200)
-      {
-        this.$emit('afterRegister')
-      }
+      let data = await FirebaseService.register(this.userForm.email, this.userForm.password)
+      console.log(data)
     }
   },
 };

@@ -3,8 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import axios from "axios";
-import AuthService from '@/services/auth-service.js'
+// import axios from "axios";
+// import AuthService from '@/services/auth-service.js'
 import Vuelidate from 'vuelidate'
 
 // import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -54,10 +54,10 @@ Vue.use(LoadScript);
 Vue.use(VueAwesomeSwiper)
 Vue.use(Vuelidate)
 
-axios.defaults.baseURL = "https://vue-shop.tk/api"
-axios.defaults.headers.common['project-name'] = 'go-shop'
+// axios.defaults.baseURL = "https://vue-shop.tk/api"
+// axios.defaults.headers.common['project-name'] = 'go-shop'
 
-AuthService.initAuthHeader();
+// AuthService.initAuthHeader();
 
 new Vue({
     router,

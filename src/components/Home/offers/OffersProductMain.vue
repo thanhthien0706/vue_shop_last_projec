@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ProductService from "@/services/product-service.js";
+// import ProductService from "@/services/product-service.js";
 
 import OffersProductItem from "./OffersProductItem.vue";
 
@@ -35,7 +35,7 @@ export default {
           price_new: "299.00",
         },
         {
-          id: 3,
+          id: 2,
           link_detail: "#",
           image: "cat-2.png",
           category: "Mountain bike",
@@ -56,17 +56,8 @@ export default {
     };
   },
   mounted() {
-    this.getListProductsOffters();
   },
   methods: {
-    async getListProductsOffters() {
-      let data_list = await ProductService.products();
-      if (data_list.code === 200) {
-        this.list_product_offers = data_list.data;
-      } else {
-          this.list_product_offers = "not products"
-      }
-    },
   },
 };
 </script>

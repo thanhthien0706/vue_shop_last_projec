@@ -44,7 +44,12 @@
 
             <form class="login" @submit.prevent="onLogin">
               <div class="form-group">
-                <input type="text" placeholder="Email"  v-model="userForm.email" class="form-control" />
+                <input
+                  type="text"
+                  placeholder="Email"
+                  v-model="userForm.email"
+                  class="form-control"
+                />
               </div>
               <div class="form-group">
                 <input
@@ -72,7 +77,6 @@
 </template>
 
 <script>
-import AuthService from '@/services/auth-service.js'
 
 export default {
   name: "TheLogin",
@@ -86,24 +90,18 @@ export default {
       userForm: {
         email: "",
         password: "",
-      }
-    }
+      },
+    };
   },
   methods: {
     //   tắt form đăng nhập
-      closeFormLogin(){
-          this.$emit('closeFormLogin');
-      },
-      async onLogin(){
-        const dataLogin = await AuthService.login(this.userForm);
-        if(dataLogin.code == 200)
-        {
-          // console.log(dataLogin.data)
-          this.$emit('changeInforLogin');
-          // this.$store.dispatch('actionSetUser', dataLogin.data.data );
-        }
+    closeFormLogin() {
+      this.$emit("closeFormLogin");
+    },
+    onLogin(){
+      console.log(this.userForm)
     }
-  }
+  },
 };
 </script>
 

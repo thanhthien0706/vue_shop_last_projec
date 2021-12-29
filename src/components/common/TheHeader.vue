@@ -170,7 +170,7 @@
           <li class="menu-item">
             <a href="#">Checkout</a>
           </li>
-          <template v-if="UserLogin && UserLogin !== null">
+          <!-- <template v-if="UserLogin && UserLogin !== null">
             <li class="menu-item">
               <a href="#">{{ UserLogin.lastname + UserLogin.firstname  }}</a>
             </li>
@@ -178,7 +178,7 @@
               <a href="#" @click.prevent="onLogout">Logout</a>
             </li>
           </template>
-          <template v-else>
+          <template v-else> -->
             <li class="menu-item">
               <a href="#" @click.prevent="toggleOpenRegister">Register</a>
             </li>
@@ -190,7 +190,7 @@
                 >Login</a
               >
             </li>
-          </template>
+          <!-- </template> -->
         </ul>
       </div>
     </div>
@@ -519,7 +519,6 @@
 </template>
 
 <script>
-import AuthService from '@/services/auth-service.js'
 
 export default {
   name: "TheHeader",
@@ -537,17 +536,8 @@ export default {
     toggleOpenRegister() {
       this.$emit("openRegister");
     },
-    async onLogout(){
-      let dataLogout = await AuthService.logout();
-      if(dataLogout.code === 200) {
-          this.$store.dispatch('actionSetUser', null );
-      }
-    }
   },
   computed: {
-    UserLogin() {
-      return this.$store.state.user;
-    },
   },
 };
 </script>

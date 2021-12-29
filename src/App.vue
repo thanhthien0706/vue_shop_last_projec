@@ -11,14 +11,12 @@
     <the-login
       :isShowLogin="isShowLogin"
       @closeFormLogin="closeFormLogin"
-      @changeInforLogin="changeInforLogin"
     />
 
     <!-- Đăng kí -->
     <the-register
       :isShowRegister="isShowRegister"
       @closeFormRegister="closeFormRegister"
-      @afterRegister="afterRegister"
     />
 
     <div
@@ -32,7 +30,7 @@
 </template>
 
 <script>
-import AuthService from "@/services/auth-service.js";
+// import AuthService from "@/services/auth-service.js";
 import { fireStoreCore } from "./configs/firebase.js";
 import { collection, getDocs } from "firebase/firestore/lite";
 
@@ -52,7 +50,7 @@ export default {
     };
   },
   mounted() {
-    this.changeInforLogin();
+    // this.changeInforLogin();
     // this.getCities();
     this.getCities();
   },
@@ -64,16 +62,16 @@ export default {
     closeFormLogin() {
       this.isShowLogin = false;
     },
-    async changeInforLogin() {
-      this.closeFormLogin();
-      const dataMe = await AuthService.me();
-      if (dataMe != false) {
-        if (dataMe.code === 200) {
-          // console.log(dataMe.data.user)
-          this.$store.dispatch("actionSetUser", dataMe.data.user);
-        }
-      }
-    },
+    // async changeInforLogin() {
+    //   this.closeFormLogin();
+    //   const dataMe = await AuthService.me();
+    //   if (dataMe != false) {
+    //     if (dataMe.code === 200) {
+    //       // console.log(dataMe.data.user)
+    //       this.$store.dispatch("actionSetUser", dataMe.data.user);
+    //     }
+    //   }
+    // },
 
     // register
     openRegister() {
@@ -82,10 +80,10 @@ export default {
     closeFormRegister() {
       this.isShowRegister = false;
     },
-    afterRegister() {
-      this.closeFormRegister();
-      this.showLogin();
-    },
+    // afterRegister() {
+    //   this.closeFormRegister();
+    //   this.showLogin();
+    // },
 
     // firebas
 
@@ -103,6 +101,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
