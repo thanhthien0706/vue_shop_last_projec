@@ -31,8 +31,8 @@
 
 <script>
 // import AuthService from "@/services/auth-service.js";
-import { fireStoreCore } from "./configs/firebase.js";
-import { collection, getDocs } from "firebase/firestore/lite";
+// import { fireStoreCore } from "./configs/firebase.js";
+// import { collection, getDocs } from "firebase/firestore/lite";
 
 import TheFooter from "./components/common/TheFooter.vue";
 import TheHeader from "./components/common/TheHeader.vue";
@@ -52,7 +52,7 @@ export default {
   mounted() {
     // this.changeInforLogin();
     // this.getCities();
-    this.getCities();
+    // this.getCities();
   },
   methods: {
     // login
@@ -91,12 +91,12 @@ export default {
     //   console.log(database)
     // },
     // Get a list of cities from your database
-    async getCities() {
-      const citiesCol = collection(fireStoreCore, "Login");
-      const citySnapshot = await getDocs(citiesCol);
-      const cityList = citySnapshot.docs.map((doc) => doc.data());
-      console.log(cityList);
-    },
+    // async getCities() {
+    //   const citiesCol = collection(fireStoreCore, "Login");
+    //   const citySnapshot = await getDocs(citiesCol);
+    //   const cityList = citySnapshot.docs.map((doc) => doc.data());
+    //   console.log(cityList);
+    // },
   },
 };
 </script>
