@@ -3,7 +3,11 @@
     <div class="product">
       <div class="image">
         <a :href="data_item_offers.link_detail"
-          ><img :src="`${require('@/assets/img/products/'+data_item_offers.image)}`" alt="Product" class="image_offers"
+          ><img
+            :src="`${require('@/assets/img/products/' +
+              data_item_offers.image)}`"
+            alt="Product"
+            class="image_offers"
         /></a>
       </div>
       <div class="right">
@@ -38,9 +42,9 @@ export default {
 </script>
 
 <style scoped>
-.image_offers{
-    width: 150px;
-    height: 130px;
-    object-fit: contain;
+.image_offers {
+  width: 150px;
+  height: 130px;
+  object-fit: contain;
 }
 </style>

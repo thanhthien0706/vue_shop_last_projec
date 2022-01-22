@@ -182,10 +182,9 @@
               </li>
             </ul>
           </div>
-          
+
           <!-- Portfolio items -->
           <filter-main :id_category_filter="filterCurrent" />
-
         </div>
       </div>
     </section>
@@ -468,10 +467,10 @@
 <script>
 import ListProduct from "@/components/Home/ListProduct.vue";
 import TheSlider from "@/components/Home/sliders/TheSlider.vue";
-import FeaturedMain from "../components/Home/featured_products/FeaturedMain.vue";
-import TheComment from "../components/Home/testimonials/TheComment.vue";
-import FilterMain from "@/components/Home/filter_product/FilterMain.vue"
-import OffersProductMain from '../components/Home/offers/OffersProductMain.vue';
+import FeaturedMain from "@/components/Home/featured_products/FeaturedMain.vue";
+import TheComment from "@/components/Home/testimonials/TheComment.vue";
+import FilterMain from "@/components/Home/filter_product/FilterMain.vue";
+import OffersProductMain from "@/components/Home/offers/OffersProductMain.vue";
 
 export default {
   name: "HomeScreen",
@@ -486,12 +485,12 @@ export default {
   data() {
     return {
       filterCurrent: 1,
-      list_main_products:[
+      list_main_products: [
         {
           id: 0,
           name_category: "",
           price: 0,
-        }
+        },
       ],
       list_products_filter: [
         {

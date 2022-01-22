@@ -127,62 +127,62 @@
         >
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-1.png" alt=""
+              ><img src="@/assets/img/extra/payment-1.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-2.png" alt=""
+              ><img src="@/assets/img/extra/payment-2.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-3.png" alt=""
+              ><img src="@/assets/img/extra/payment-3.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-4.png" alt=""
+              ><img src="@/assets/img/extra/payment-4.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-5.png" alt=""
+              ><img src="@/assets/img/extra/payment-5.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-6.png" alt=""
+              ><img src="@/assets/img/extra/payment-6.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-7.png" alt=""
+              ><img src="@/assets/img/extra/payment-7.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-8.png" alt=""
+              ><img src="@/assets/img/extra/payment-8.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-1.png" alt=""
+              ><img src="@/assets/img/extra/payment-1.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-2.png" alt=""
+              ><img src="@/assets/img/extra/payment-2.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-5.png" alt=""
+              ><img src="@/assets/img/extra/payment-5.png" alt=""
             /></a>
           </swiper-slide>
           <swiper-slide class="item">
             <a href="#"
-              ><img src="../../assets/img/extra/payment-3.png" alt=""
+              ><img src="@/assets/img/extra/payment-3.png" alt=""
             /></a>
           </swiper-slide>
           <div
